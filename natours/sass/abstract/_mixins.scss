@@ -1,0 +1,65 @@
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin absoluteCenter {  // Position a container at the center of its parent container.
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Media query manager
+/*
+0 - 600px:      phone
+600 - 900px:    tablet portrait
+900 - 1200px:   tablet landscape
+1200 - 1800px:  normal desktop (where our normal styles apply)
+1800px+         Very big desktop
+*/
+@mixin respond-phone {
+  @media (max-width: 600px) {
+    @content
+  };
+  // Pass block of code through @content directive.
+  // This is only for example and will not be used in project
+}
+
+/*
+$breakport choices:
+- phone
+- tab-port (tablet portrait)
+- tab-land (tablet landscape)
+- big-desk (big desktop)
+
+1em = 16px
+
+Design order: Base + typography > general layout + grid > page layout > components
+
+*/
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) {  // 600px 
+      @content
+    };
+  }
+  @if $breakpoint == tab-port {
+    @media (max-width: 56.25em) {   // 900px
+      @content
+    };
+  }
+  @if $breakpoint == tab-land {
+    @media (max-width: 75em) {  // 1200px
+      @content
+    };
+  }
+  @if $breakpoint == big-desk {
+    @media (min-width: 112.5em) {  // 1800px
+      @content
+    };
+  }
+}

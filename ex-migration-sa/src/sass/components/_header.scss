@@ -1,0 +1,127 @@
+.header {
+  max-width: 120rem;  
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  padding-bottom: 2rem;
+
+  @media only screen and (max-width: $bp-small) {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+
+    & > .logo {
+      justify-self: center;
+
+      & > .logo__img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    & > .menu {
+      display: none;
+    }
+
+    & > .search {
+      justify-self: center;
+      padding: 0;
+    }
+  }
+}
+
+.logo {
+  grid-row: 1/-1;
+  align-self: center;
+}
+
+.menu {
+  justify-self: end;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    
+    @media only screen and (max-width: $bp-medium) { 
+      display: grid;
+      grid-template-columns: repeat(4, max-content);      
+    } 
+    &-item {
+      min-width: 10rem;
+      height: 5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @media only screen and (max-width: $bp-medium) {
+        height: 4rem;
+      }
+      
+      &--link {
+        font-size: 1.2rem;
+        color: $color-grey-medium;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      &--icon {
+        width: 1.2rem;
+        height: 1.2rem;
+        fill: $color-grey-normal;
+        transform: translateY(.2rem);
+      }
+
+      &--btn {
+        color: $color-white;
+        background-color: $color-red-light;
+        display: inline-block;
+        padding: .6rem;
+
+        &:hover {
+          text-decoration: underline;
+          background-color: $color-red-dark;
+        }
+      }
+    }
+  }
+}
+
+.search {
+  position: relative;
+  justify-self: end;
+  padding-right: 2rem;
+
+  &__input {
+    border: 1px solid $color-grey-light;
+    height: 3.5rem;
+    padding-left: 3rem;
+    width: 35rem;
+    @media only screen and (max-width: $bp-small) {
+      max-width: 30rem;
+    }
+    @media only screen and (max-width: 350px) {
+      max-width: 20rem;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+  
+  ::placeholder {
+    color: $color-grey-light-1;
+  }
+
+  &__icon {
+    width: 2rem;
+    height: 2rem;
+    fill: $color-grey-light;
+    position: absolute;
+    left: 0.4rem;
+    top: .7rem;
+  }
+}

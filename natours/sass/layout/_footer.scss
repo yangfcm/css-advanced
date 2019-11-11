@@ -1,0 +1,71 @@
+.footer {
+  background-color: #333;
+  padding: 10rem 0;
+  font-size: 1.4rem;
+
+  @include respond(tab-port) {
+    padding: 8rem 0;
+  }
+
+  &__logo {
+    display: block;
+    margin: 0 auto;
+    width: 15rem;
+    height: auto;
+  }
+
+  &__navigation {
+    border-top: 1px solid $color-gray-dark;
+    padding-top: 2rem;
+    // display: block;
+    
+    @include respond(tab-port) {
+      margin: 0 auto;
+      width: 85%;
+      // display: block;
+      text-align: center;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    text-align: center;
+  }
+
+  &__item {
+    display: inline-block;
+    &:not(:last-child) {
+      margin-right: 1.5rem;
+    }
+  }
+
+  &__link {
+    &:link, &:visited {
+      color: $color-gray-light;
+      text-decoration: none;
+      text-transform: uppercase;
+      display: inline-block;
+    }
+
+    &:hover, &:active {
+      color: $color-primary;
+      box-shadow: 0 1rem 2rem rgba($color-black, .4);
+      font-size: 1.5rem;
+    }
+  }
+
+  &__info {
+    color: $color-gray-light;
+    padding-top: 2rem;
+    border-top: 1px solid $color-gray-dark;
+    // display: inline-block;
+    text-align: center;
+
+    @include respond(tab-port) {
+      width: 85%;
+      //display: block;
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
+} 

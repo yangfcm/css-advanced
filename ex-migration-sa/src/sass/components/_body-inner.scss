@@ -1,0 +1,348 @@
+.body-inner {
+  background-color: $color-grey-light;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3.5rem;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(5, max-content);
+  grid-gap: 3rem;
+
+  @media only screen and (max-width: $bp-small) {
+    grid-template-rows: repeat(8, max-content);
+  }
+}
+
+.i-am {
+  grid-column: 1/4;
+
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); 
+
+  @media only screen and (max-width: $bp-small) {
+    grid-column: 1/-1;
+    grid-row: 1/2;
+
+    &>* {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__text {
+    font-size: 2.2rem;
+    font-weight: bolder;
+    color: $color-grey-normal;
+    padding-bottom: 3rem;
+  }
+
+  .group {
+    background-color: #fff;
+    border-right: 1px solid $color-grey-light;
+    border-bottom: 1px solid $color-grey-light;
+    padding: 2rem;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $color-grey-light-1;
+      transition: background-color .6s;
+    }
+
+    h2{
+      font-size: 1.8rem;
+      color: $color-grey-normal;
+      margin-bottom: 1rem; 
+    }
+
+    p{
+      font-size: 1.6rem;
+      color: $color-grey-normal;
+    }
+  }
+}
+
+.featured-links {
+  grid-column: 1/2;
+  grid-row: 2/3; 
+
+  background-color: #fff;
+  padding-bottom: 8rem;
+
+  @media only screen and (max-width: $bp-small) {
+    grid-column: 1/-1;
+    grid-row: 2/3;
+
+    padding-bottom: 0;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+    color: $color-grey-normal;
+    border-bottom: 1px solid $color-grey-light;
+    padding: 3rem;
+  }
+
+  &__list {
+
+  }
+
+  &__link {
+    display: block;
+    border-bottom: 1px solid $color-grey-light;
+    padding: 0rem 1rem 4rem 2rem;
+    color: $color-grey-normal;
+    font-size: 1.6rem;
+   
+
+    img {
+      transform: translateY(2rem);
+      margin-right: 1rem;
+      width: 6rem;
+      height: 5rem;
+    }
+
+    &:hover {
+      background-color: $color-grey-light-2;
+      transition: background-color .6s;
+    }
+  }
+}
+
+.success-story1 {
+  grid-column: 2/3;
+  grid-row: 2/3;
+
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  
+  @media only screen and (max-width: $bp-small) {
+    grid-column: 1/-1;
+    grid-row: 3/4;    
+
+    grid-template-rows: repeat(2, max-content);
+  }
+
+  &__img {
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__text {
+    background-image: linear-gradient(to right bottom, $color-red-light, $color-red-dark);
+    padding: 2.5rem;
+    color: #fff;
+    transform: translateY(-.5rem);
+    height: 101.5%;
+
+    @media only screen and (max-width: $bp-small) {
+      transform: translateY(-.5rem);
+    }
+
+    h3{
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    h2{
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    p{
+      font-size: 1.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    a{
+      font-size: 1.6rem;
+      color: #fff;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.living-here {
+  grid-column: 3/4;
+  grid-row: 2/3;
+  background-color: $color-orange-dark;
+
+  @media only screen and (max-width: $bp-small) {
+    grid-column: 1/-1;
+    grid-row: 4/5;
+    height: 65rem;
+  }
+
+  &__link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/australia.svg");
+    background-size: 90% auto;
+    background-position: center top;
+    background-repeat: no-repeat;
+    filter: brightness(100);
+    position: relative;
+  }
+
+  &__title {
+    font-size: 2.2rem;
+    color: #fff;
+    position: absolute;
+    left: 3rem;
+    bottom: 8rem;
+  }
+
+  &__text {
+    font-size: 2rem;
+    color: #fff;
+    position: absolute;
+    left: 3rem; 
+    bottom: 5rem;
+  }
+}
+
+.occupation-list {
+  grid-column: 1/2;
+  grid-row: 3/4;
+
+  padding: 3rem;
+  background-color: $color-grey-normal;
+
+  color: white;
+
+  @media only screen and (max-width: $bp-small) {
+    grid-column: 1/-1;
+    grid-row: 5/6;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
+
+  a {
+    color: #fff;
+    font-size: 1.6rem;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.process-time {
+  grid-column: 1/2;
+  grid-row: 4/5;
+
+  background-color: #fff;
+  padding: 3rem; 
+
+  @media only screen and (max-width: $bp-small) {
+    grid-column: 1/-1;
+    grid-row: 6/7;
+  }
+
+  h2{
+    font-size: 2rem;
+    color: $color-red-normal;
+    margin-bottom: 1rem;
+  }
+
+  p{
+    font-size: 1.6rem;
+    color: $color-grey-normal;
+    margin-bottom: 2rem;
+  }
+
+  a{
+    font-size: 1.6rem;
+    color: $color-red-light;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.success-story2 {
+  grid-column: 2/3;
+  grid-row: 3/5;
+
+  background-image: linear-gradient(to right bottom, $color-orange-light, $color-orange-dark);
+  padding: 2.5rem;
+  color: white;
+
+  @media only screen and (max-width: $bp-small) {
+    grid-column: 1/-1;
+    grid-row: 7/8;
+  }
+
+  h3{
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  h2{
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  p{
+    font-size: 1.6rem; 
+    margin-bottom: 1.5rem;
+  }
+
+  a{
+    font-size: 1.6rem;
+    color: #fff;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.news {
+  grid-column: 3/4;
+  grid-row: 3/5;
+  background-color: #fff;
+
+  @media only screen and (max-width: $bp-small) {
+    grid-column: 1/-1;
+    grid-row: 8/9;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+    color: $color-grey-normal;
+    border-bottom: 1px solid $color-grey-light;
+    padding: 3rem;
+  }
+
+  &__list {
+  }
+
+  &__link {
+    display: block;
+    border-bottom: 1px solid $color-grey-light;
+    padding: 3rem;
+    color: $color-grey-normal;
+    font-size: 1.6rem;
+    &:hover {
+      background-color: $color-grey-light-2;
+      transition: background-color .6s;
+    }
+  }
+}
+
+.social-media {
+  grid-column: 1/-1;
+  grid-row: 5/6;
+}

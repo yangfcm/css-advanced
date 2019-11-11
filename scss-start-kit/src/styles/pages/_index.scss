@@ -1,0 +1,11 @@
+@import '../components/header'; 
+@import '../components/footer'; 
+
+.main {
+  background-color: burlywood;
+  
+  img {
+    width: 300px;
+    height: auto;
+  }
+}

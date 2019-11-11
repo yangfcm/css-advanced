@@ -1,0 +1,67 @@
+.header {
+  height: 85vh;
+  background-image: linear-gradient(
+    to right bottom, 
+    rgba($color-primary-light, 0.6), 
+    rgba($color-primary-dark, 0.6)), 
+    url("../img/hero-small.jpg");
+  position: relative;
+  background-size: cover;
+  background-position: top;
+  
+  @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    height: 95vh;
+  }
+
+  // Use css to make background image responsive
+  // If resolution is higher than 192dpi and the screen width is larger than 600px , the web will apply this CSS rule.
+  // This rules is to load hero-small.jpg(defined in the above rule) on mobile phone, which has higher resolution but smaller screen width
+  @media(min-resolution: 192dpi) and (min-width: 37.5em),
+        (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em) {
+      // The second line is for safari because it doesn't support min-resolution property.
+    background-image: linear-gradient(
+    to right bottom, 
+    rgba($color-primary-light, 0.6), 
+    rgba($color-primary-dark, 0.6)), 
+    url("../img/hero.jpg");
+  }
+
+  // On the large screen(>=2000px), apply hero.jpg.
+  @media(min-width: 125em) {
+    background-image: linear-gradient(
+    to right bottom, 
+    rgba($color-primary-light, 0.6), 
+    rgba($color-primary-dark, 0.6)), 
+    url("../img/hero.jpg");
+  }
+  
+
+  @include respond(tab-port) {
+    -webkit-clip-path: none;
+    clip-path: none;
+  }
+
+  &__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+  }
+  
+  &__logo {
+    height: 3.5rem;
+  }
+
+  &__heading-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    @include respond(tab-port) {
+      top: 45%;
+    }
+  }
+}
